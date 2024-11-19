@@ -1,23 +1,54 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
+# Dependencies
 /node_modules
+
+# Package managers
 /.pnp
 .pnp.js
 
-# testing
+# Testing
 /coverage
 
-# production
+# Production builds
 /build
 
-# misc
+# Editor configuration and temporary files
 .DS_Store
+
+# Environment variables
+.env
+
+# Specific local environment variable files
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
+# npm/yarn debug logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Editor temporary files (adjust for your editor)
+*.swp
+*.swo
+
+# OS specific temporary files (adjust as needed)
+thumbs.db
+Desktop.ini
+
+# IDE/Version control system files
+.idea/
+.vscode/
+*.suo
+*.pyc
+
+# Specific file extensions for generated files (adjust as needed)
+*.log
+*.gz
+*.csv
+
+# Generated documentation
+/docs
+
+# Specific directory for generated data (adjust as needed)
+/data
