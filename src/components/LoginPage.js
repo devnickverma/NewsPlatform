@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Box, TextField, Button, Typography, Paper } from "@mui/material";
 
 function LoginPage({ setIsAuthenticated }) {
   const [email, setEmail] = useState("");
@@ -22,24 +23,46 @@ function LoginPage({ setIsAuthenticated }) {
   };
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h2>Login to CodeShort</h2>
-      <input
-        type="email"
-        placeholder="Enter your email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <br />
-      <input
-        type="password"
-        placeholder="Enter your password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <br />
-      <button onClick={handleLogin}>Login</button>
-    </div>
+    <Box
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      minHeight="100vh"
+      bgcolor="#f5f5f5"
+    >
+      <Paper elevation={3} sx={{ padding: 4, maxWidth: 400, textAlign: "center" }}>
+        <Typography variant="h4" component="h1" gutterBottom>
+          Login to CodeShort
+        </Typography>
+        <Box component="form" noValidate autoComplete="off">
+          <TextField
+            label="Email"
+            type="email"
+            fullWidth
+            margin="normal"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <TextField
+            label="Password"
+            type="password"
+            fullWidth
+            margin="normal"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <Button
+            variant="contained"
+            color="primary"
+            fullWidth
+            sx={{ marginTop: 2 }}
+            onClick={handleLogin}
+          >
+            Login
+          </Button>
+        </Box>
+      </Paper>
+    </Box>
   );
 }
 
